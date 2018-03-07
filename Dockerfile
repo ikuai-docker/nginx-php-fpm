@@ -9,7 +9,7 @@ COPY ./app /var/www/app/
 
 RUN buildDeps='software-properties-common python-software-properties' \
 	apt-get update \
-	&& apt-get install --no-install-recommends -y $buildDeps wget curl \
+	&& apt-get install --no-install-recommends -y $buildDeps wget curl zip \
 	&& wget -O - http://nginx.org/keys/nginx_signing.key | apt-key add - \
 	&& echo "deb http://nginx.org/packages/ubuntu/ xenial nginx" | tee -a /etc/apt/sources.list \
 	&& echo "deb-src http://nginx.org/packages/ubuntu/ xenial nginx" | tee -a /etc/apt/sources.list \
